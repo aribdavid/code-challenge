@@ -30,8 +30,9 @@ class Input extends React.Component {
             this.setState({ error2: true })
         } else if (areaParede > 15 || areaParede < 1) {
             this.setState({ error: true })
-        }
-        else {
+        } else if (portas !== 0 && altura < 220  ) {
+            this.setState({ error: true })
+        } else {
             this.setState({
                 areaTotal: areaParede - areaPortas - areaJanelas,
                 error: false,
